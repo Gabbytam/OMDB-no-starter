@@ -1,1 +1,28 @@
-<!-- this page will show details on the selected movie_id, which comes from the req.params -->
+<h1> <%= movieDetails.Title %></h1>
+<div>
+<!-- <div style='display: flex; flex-direction: row; width: 100%; height: 100%'> -->
+    <img src='<%= movieDetails.Poster %>' height='300px' style='display: inline; padding-right: 20px; float: left;'>
+    <div style="width: 70%; height: 100%;">
+        <p>imdb Rating: <%= movieDetails.imdbRating %></p>
+        <p>Year: <%= movieDetails.Year %></p>
+        <p>Rated: <%= movieDetails.Rated %></p>
+        <p>Release Data: <%= movieDetails.Released %></p>
+        <p>Run Time: <%= movieDetails.Runtime %></p>
+        <p>Genre: <%= movieDetails.Genre %></p>
+        <p>Director: <%= movieDetails.Director %></p>
+        <p>Writer: <%= movieDetails.Writer %></p>
+        <p>Actors: <%= movieDetails.Actors %></p>
+        <p>Plot: <%= movieDetails.Plot %></p>
+        <p>Awards: <%= movieDetails.Awards %></p>
+        <p>More Ratings:
+            <ul>
+                <% movieDetails.Ratings.forEach(rating => { %>
+                    <li>
+                        <%= rating.Source %> gave a rating of <%= rating.Value %>
+                    </li>
+                <% }) %>
+            </ul>
+        </p>
+    </div>
+</div>
+

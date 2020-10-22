@@ -1,2 +1,19 @@
-<!-- you will be brought to this page where you will see the movie results for whatever movie user searched for, connected to req.query -->
 <h1>Results for: <%= movie %> </h1>
+
+<ul>
+    <% movieData.Search.forEach((item, index) => { %>
+        <li> 
+            <div style="height: 10%; width:100%">
+                <img src='<%= item.Poster %>' height='150px'>
+            Title: <%= item.Title %> 
+            <!-- IMDBid: <%#= item.imdbID %> -->
+            <form method='GET' action='/movies/<%- item.imdbID %>'>
+                <input type='submit' value='Select'>
+            </form>
+            </div>
+            
+        </li>
+   <%  })  %>
+        
+</ul> 
+
